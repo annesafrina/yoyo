@@ -7,7 +7,7 @@ describe("Deploy contracts", function () {
   beforeEach(async function () {
     [deployer, user, attacker] = await ethers.getSigners();
 
-    const BankFactory = await ethers.getContractFactory("Bank", deployer);
+    const BankFactory = await ethers.getContractFactory("Game", deployer);
     this.bankContract = await BankFactory.deploy();
 
     await this.bankContract.deposit({ value: ethers.utils.parseEther("100") });
